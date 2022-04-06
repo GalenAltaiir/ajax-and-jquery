@@ -1,0 +1,38 @@
+{
+    "students":[
+        {
+            "ID": "24856",
+            "name": "Emily",
+            "surname": "Johnson",
+            "gender": "female",
+            "age":19,
+            "exams":[
+            {
+                "module": "ABC100",
+                "grade":"A"
+            },
+            {
+                "module": "EFG123",
+                "grade": "C"
+            }
+            ]
+        },
+        {
+            "ID": "89133",
+            "name": "Daniel",
+            "surname": "Smith",
+            "gender": "Male",
+            "age":20,
+            "exams":[
+            {
+                "module": "ABC100",
+                "grade":"D"
+            },
+            {
+                "module": "EFG123",
+                "grade": "B"
+            }
+            ]
+        }
+    ]
+}

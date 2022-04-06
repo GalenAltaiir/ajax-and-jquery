@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="readData.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+          $("button").click(function(){
+            $.ajax({url: "data.json", success: function(result){
+                let count = result.students.length
+                for (let i = 0; i < count; i++) {
+                    $("#demo").append("ID: "+result.students[i].ID + "<br>");
+                    $("#demo").append("Name: "+result.students[i].name + "<br>");
+                    $("#demo").append("Surname: "+result.students[i].surname + "<br>");
+                    $("#demo").append("Gender: "+result.students[i].gender + "<br>");
+                    $("#demo").append("Age: "+result.students[i].age + "<br>");
+                    $("#demo").append("Exams: <br><br>");
+
+                    let countExam = result.students[i].exams.length
+
+                    for(let j = 0; j < countExam; j++){
+                        $("#demo").append("Module: "+result.students[i].exams[j].module + "<br>");
+                        $("#demo").append("Grade: "+result.students[i].exams[j].grade + "<br><br>");
+                    }
+
+                    $("#demo").append("-------------------<br>")
+                }
+
+              /* $("#demo").html(JSON.stringify(result)); RETURNS IT AS A STRING*/
+            }});
+          });
+        });
+        </script>
+</head>
+<body>
+    <div id="demo"></div>
+    <button>Show Data</button>
+
+
+
+</body>
+</html>
